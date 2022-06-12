@@ -1,6 +1,6 @@
 FROM slam:base
 
-ARG BRANCH=main
+ARG BRANCH=origin
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && apt-get upgrade -y
@@ -8,10 +8,8 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN useradd -m user && yes password | passwd user
 
 RUN echo "== Start Debug build == " && \
-echo $(dirname $(realpath $0)) && \
 #cd programmers_slam_project_template && \
 cd slam/programmers_slam_project_template && \
-echo $(dirname $(realpath $0)) && \
 git remote update && \
 git fetch --all && \
 git checkout ${BRANCH} && \
