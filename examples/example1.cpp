@@ -1,4 +1,4 @@
-#include "ImageProjector/ImageProjector.hpp"
+#include "module1/Class.hpp"
 
 
 int main()
