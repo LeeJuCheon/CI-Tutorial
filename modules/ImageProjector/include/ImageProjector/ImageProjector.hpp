@@ -40,8 +40,8 @@ struct ProjectedPoints
 };
 
 ProjectedPoints project_points(
-  const Landmark3DPosition& point3D, 
-  const IntrinsicMatrix& intrinsics, 
+  const Landmark3DPosition& point3D,
+  const IntrinsicMatrix& intrinsics,
   const ExtrinsicMatrix& extrinsics)
 {
   std::ignore = point3D;
