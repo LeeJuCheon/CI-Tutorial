@@ -2,6 +2,9 @@
 .idea/
 cmake-build-debug/
 cmake-build-release/
+build/
+build_debug/
+build_release/
 
 thirdparty/cereal
 thirdparty/ceres
