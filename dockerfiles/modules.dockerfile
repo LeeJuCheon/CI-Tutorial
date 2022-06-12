@@ -19,7 +19,6 @@ cmake -DCMAKE_BUILD_TYPE=Debug -GNinja .. && ninja
 
 RUN echo "== Start Release build == " && \
 cd /slam/CI-Tutorial && \
-cd .. && \
 git remote update && \
 git fetch --all && \
 git checkout ${BRANCH} && \
