@@ -8,5 +8,6 @@
 #define USING_EASY_PROFILER
 #include "easy/profiler.h"
 #include "spdlog/spdlog.h"
+#include <unistd.h>
 
 #endif  // SVSLAM_CLASS_HPP

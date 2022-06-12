@@ -1,45 +1,45 @@
 # Test sources
-set(MODULE1_TEST_SRCS
-        sample1
+set(IMAGEPROJECTOR_TEST_SRCS
+        ImageProjector
         )
 
 # Include
 include_directories(
-        ${MODULE1_INCLUDE_PATH}
+        ${IMAGEPROJECTOR_INCLUDE_PATH}
 )
 
 # Targets
-add_executable(unit_tests
+add_executable(ImageProjector_test
         main.cpp
-        ${MODULE1_TEST_SRCS}.cpp
+        ${IMAGEPROJECTOR_TEST_SRCS}.cpp
         )
 
-target_link_libraries(unit_tests
+target_link_libraries(ImageProjector_test
         ${GTEST_LIBS}
-        module1
+        ImageProjector
         stdc++fs
         )
 
-add_test(NAME UnitTest COMMAND
-        ${CMAKE_CURRENT_BINARY_DIR}/unit_tests)
+add_test(NAME ImageProjectorTest COMMAND
+        ${CMAKE_CURRENT_BINARY_DIR}/ImageProjector_test)
 
 set(matchString "/")
 set(replaceWith "_")
 
-foreach(test ${MODULE1_TEST_SRCS})
-    string(REPLACE ${matchString} ${replaceWith} test_name ${test})
-    set(test_name ${test_name})
+# foreach(test ${IMAGEPROJECTOR_TEST_SRCS})
+#     string(REPLACE ${matchString} ${replaceWith} test_name ${test})
+#     set(test_name ${test_name})
 
-    add_executable(${test_name}
-            main.cpp
-            ${test}.cpp)
-    target_link_libraries(${test_name}
-            ${GTEST_LIBS}
-            module1
-            stdc++fs
-            )
-    add_test(${test_name}
-            ${test_name}
-            --gtest_color=yes
-            )
-endforeach()
+#     add_executable(${test_name}
+#             main.cpp
+#             ${test}.cpp)
+#     target_link_libraries(${test_name}
+#             ${GTEST_LIBS}
+#             IMAGEPROJECTOR
+#             stdc++fs
+#             )
+#     add_test(${test_name}
+#             ${test_name}
+#             --gtest_color=yes
+#             )
+# endforeach()

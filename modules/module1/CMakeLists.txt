@@ -35,10 +35,11 @@ add_library(${PACKAGE_NAME}
 # Header files, including 3rdParty
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_MODULE_PATH})
 
-target_include_directories(${PACKAGE_NAME} PRIVATE
+target_include_directories(${PACKAGE_NAME} PUBLIC
         ${MODULE1_INCLUDE_PATH}
         )
-target_link_libraries(${PACKAGE_NAME} PRIVATE
+        
+target_link_libraries(${PACKAGE_NAME} PUBLIC
         ${EASY_PROFILER_LIBS}
         ${SPDLOG_LIBS}
         stdc++fs

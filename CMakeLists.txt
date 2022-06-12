@@ -49,7 +49,9 @@ include(cmake_files/find_eigen3)
 include(cmake_files/find_image_exts) # ${IMAGE_LIBS} - png, jpeg, tiff, zlib
 include(cmake_files/find_yaml_cpp)
 include(cmake_files/find_opencv)
+
 include(cmake_files/find_ceres)
+
 include(cmake_files/find_gl) # ${GL_LIBS} - OpenGL, GLUT, GLEW
 include(cmake_files/find_pangolin)
 include(cmake_files/find_gtest)
@@ -68,6 +70,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(modules/module1)
+add_subdirectory(modules/ImageProjector)
 
 #----------------------------------------
 # Executables
@@ -76,9 +79,24 @@ add_subdirectory(modules/module1)
 add_executable(example1
         examples/example1.cpp
         )
-target_include_directories(example1 PRIVATE
+
+
+target_include_directories(example1 PUBLIC
         ${MODULE1_INCLUDE_PATH}
         )
-target_link_libraries(example1 PRIVATE
+target_link_libraries(example1 PUBLIC
         module1
+        )
+
+
+add_executable(example2
+        examples/example2.cpp
+        )
+
+target_include_directories(example2 PUBLIC
+        ${IMAGEPROJECTOR_INCLUDE_PATH}
+        )
+
+target_link_libraries(example2 PUBLIC
+        ImageProjector
         )

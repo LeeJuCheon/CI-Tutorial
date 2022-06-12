@@ -545,11 +545,11 @@ def install_ceres(cfg, enable_debug):
 
             if install_in_system:
                 if os.system(
-                        exec_string + " -DEigen3_DIR=../../eigen/install/Debug/share/eigen3/cmake -DCMAKE_BUILD_TYPE=Debug " + debug_build_flags) != 0:
+                        exec_string + " -DEigen3_DIR=../../eigen/install/Debug/share/eigen3/cmake " + debug_build_flags) != 0:
                     raise Exception("Ceres-solver: cmake configuration failed")
             else:
                 if os.system(
-                        exec_string + " -DEigen3_DIR=../../eigen/install/Debug/share/eigen3/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../../install/Debug " + debug_build_flags) != 0:
+                        exec_string + " -DEigen3_DIR=../../eigen/install/Debug/share/eigen3/cmake -DCMAKE_INSTALL_PREFIX=../../install/Debug " + debug_build_flags) != 0:
                     raise Exception("Ceres-solver: cmake configuration failed")
 
             if os.system("ninja") != 0:
