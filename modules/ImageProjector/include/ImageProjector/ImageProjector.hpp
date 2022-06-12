@@ -39,12 +39,15 @@ struct ProjectedPoints
   double v;
 };
 
-ProjectedPoints project_points(const Landmark3DPosition& point3D, const IntrinsicMatrix& intrinsics, const ExtrinsicMatrix& extrinsics)
+ProjectedPoints project_points(
+  const Landmark3DPosition& point3D, 
+  const IntrinsicMatrix& intrinsics, 
+  const ExtrinsicMatrix& extrinsics)
 {
   std::ignore = point3D;
   std::ignore = intrinsics;
   std::ignore = extrinsics;
-  return ProjectedPoints{};
+  return ProjectedPoints {};
 }
 
 #endif  // SVSLAM_CLASS_HPP
